@@ -5,6 +5,7 @@ import 'package:Flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as Http;
+import 'package:intl/intl.dart';
 
 class StatToday extends StatefulWidget {
   StatToday({Key key, this.title}) : super(key: key);
@@ -18,6 +19,7 @@ class StatToday extends StatefulWidget {
 class _StatTodayState extends State<StatToday> {
   var jsonData;
   Map<String, int> data = {};
+  final oCcy = new NumberFormat("#,###");
 
   TextStyle styleNumber = GoogleFonts.prompt(
     fontSize: 20,
@@ -94,7 +96,7 @@ class _StatTodayState extends State<StatToday> {
                             child: new Column(
                               children: <Widget>[
                                 new Text(
-                                  '${data[keys[index]]}',
+                                  '${oCcy.format(data[keys[index]])}',
                                   style: styleNumber,
                                 ),
                                 new Text(

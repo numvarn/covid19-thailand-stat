@@ -24,10 +24,12 @@ class _StatByCaseState extends State<StatByCase> {
   );
 
   TextStyle contentStyle = GoogleFonts.sarabun(
+    height: 1.8,
     fontSize: 16,
   );
 
   TextStyle desctStyle = GoogleFonts.sarabun(
+    height: 1.8,
     fontSize: 14,
   );
 
