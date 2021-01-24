@@ -34,3 +34,4 @@ phisan.s@sskru.ac.th
 
 
 ### ตัวอย่างหน้าจอ User Interface
+![App_ui](./covid-UI.png)
