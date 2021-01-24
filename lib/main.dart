@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/Screens/welcome/welcome_screen.dart';
-import 'package:Flutter_auth/constants.dart';
+import 'package:Thai_Covid_19/Screens/welcome/welcome_screen.dart';
+import 'package:Thai_Covid_19/constants.dart';
 
 void main() => runApp(MyApp());
 

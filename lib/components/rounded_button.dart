@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/constants.dart';
+import 'package:Thai_Covid_19/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;

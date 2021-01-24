@@ -1,7 +1,7 @@
-import 'package:Flutter_auth/Screens/App/bycase_screen.dart';
-import 'package:Flutter_auth/Screens/App/covid_today_screen.dart';
-import 'package:Flutter_auth/Screens/App/profile_screen.dart';
-import 'package:Flutter_auth/Screens/welcome/welcome_screen.dart';
+import 'package:Thai_Covid_19/Screens/App/bycase_screen.dart';
+import 'package:Thai_Covid_19/Screens/App/covid_today_screen.dart';
+import 'package:Thai_Covid_19/Screens/App/profile_screen.dart';
+import 'package:Thai_Covid_19/Screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

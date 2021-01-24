@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:Flutter_auth/Screens/App/side_menu.dart';
-import 'package:Flutter_auth/Screens/Login/components/background.dart';
+import 'package:Thai_Covid_19/Screens/App/side_menu.dart';
+import 'package:Thai_Covid_19/Screens/Login/components/background.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as Http;
@@ -34,14 +34,14 @@ class _StatTodayState extends State<StatToday> {
   );
 
   final keys = [
+    'newConfirmed',
+    'newDeaths',
     'confirmed',
     'recovered',
     'hospitalized',
     'deaths',
-    'newConfirmed',
     'newRecovered',
     'newHospitalized',
-    'newDeaths'
   ];
 
   Future<String> _getCovid19TodayAPI() async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/constants.dart';
+import 'package:Thai_Covid_19/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SocalIcon extends StatelessWidget {

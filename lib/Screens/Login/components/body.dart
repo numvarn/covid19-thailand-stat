@@ -1,11 +1,11 @@
-import 'package:Flutter_auth/Screens/App/covid_today_screen.dart';
+import 'package:Thai_Covid_19/Screens/App/covid_today_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/Screens/Login/components/background.dart';
-import 'package:Flutter_auth/Screens/Signup/signup_screen.dart';
-import 'package:Flutter_auth/components/already_have_an_account_acheck.dart';
-import 'package:Flutter_auth/components/rounded_button.dart';
-import 'package:Flutter_auth/components/rounded_input_field.dart';
-import 'package:Flutter_auth/components/rounded_password_field.dart';
+import 'package:Thai_Covid_19/Screens/Login/components/background.dart';
+import 'package:Thai_Covid_19/Screens/Signup/signup_screen.dart';
+import 'package:Thai_Covid_19/components/already_have_an_account_acheck.dart';
+import 'package:Thai_Covid_19/components/rounded_button.dart';
+import 'package:Thai_Covid_19/components/rounded_input_field.dart';
+import 'package:Thai_Covid_19/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {

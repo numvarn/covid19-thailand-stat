@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/Screens/Signup/components/body.dart';
+import 'package:Thai_Covid_19/Screens/Signup/components/body.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override

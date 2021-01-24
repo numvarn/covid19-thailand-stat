@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter_auth/Screens/Login/login_screen.dart';
-import 'package:Flutter_auth/Screens/Signup/signup_screen.dart';
-import 'package:Flutter_auth/Screens/welcome/components/background.dart';
-import 'package:Flutter_auth/components/rounded_button.dart';
-import 'package:Flutter_auth/constants.dart';
+import 'package:Thai_Covid_19/Screens/Login/login_screen.dart';
+import 'package:Thai_Covid_19/Screens/Signup/signup_screen.dart';
+import 'package:Thai_Covid_19/Screens/welcome/components/background.dart';
+import 'package:Thai_Covid_19/components/rounded_button.dart';
+import 'package:Thai_Covid_19/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
