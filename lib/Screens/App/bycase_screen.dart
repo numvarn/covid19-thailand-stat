@@ -70,33 +70,37 @@ class _StatByCaseState extends State<StatByCase> {
             future: _getCovid19API(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ListView.builder(
-                  padding: const EdgeInsets.all(10.0),
-                  itemCount: dataList.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      color: new Color(0x7134eb),
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 1.0, vertical: 10.0),
-                      child: new InkWell(
-                        onTap: () {},
-                        child: ListTile(
-                          leading: FlutterLogo(),
-                          title: Text(
-                            'สัญชาติ: ${dataList[index].nation},\n'
-                            'เพศ: ${dataList[index].gender}\n'
-                            'จังหวัด: ${dataList[index].province}',
-                            style: contentStyle,
+                return new RefreshIndicator(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(10.0),
+                      itemCount: dataList.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: new Color(0x7134eb),
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 1.0, vertical: 10.0),
+                          child: new InkWell(
+                            onTap: () {},
+                            child: ListTile(
+                              leading: FlutterLogo(),
+                              title: Text(
+                                'สัญชาติ: ${dataList[index].nation},\n'
+                                'เพศ: ${dataList[index].gender}\n'
+                                'จังหวัด: ${dataList[index].province}',
+                                style: contentStyle,
+                              ),
+                              subtitle: Text(
+                                'วันที่: ${dataList[index].confirmDate}',
+                                style: desctStyle,
+                              ),
+                            ),
                           ),
-                          subtitle: Text(
-                            'วันที่: ${dataList[index].confirmDate}',
-                            style: desctStyle,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                );
+                        );
+                      },
+                    ),
+                    onRefresh: () {
+                      return _getCovid19API();
+                    });
               } else {
                 return Center(
                   child: CircularProgressIndicator(),

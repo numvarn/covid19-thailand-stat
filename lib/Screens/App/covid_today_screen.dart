@@ -79,35 +79,40 @@ class _StatTodayState extends State<StatToday> {
               future: _getCovid19TodayAPI(),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 if (snapshot.hasData) {
-                  return ListView.builder(
-                      itemCount: data.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          // color: Colors.lightBlueAccent,
-                          color: new Color(0x7134eb),
-                          elevation: 1,
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 10.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: new Container(
-                            padding: new EdgeInsets.all(32.0),
-                            child: new Column(
-                              children: <Widget>[
-                                new Text(
-                                  '${oCcy.format(data[keys[index]])}',
-                                  style: styleNumber,
-                                ),
-                                new Text(
-                                  '${keys[index]}',
-                                  style: styleDesc,
-                                ),
-                              ],
+                  return new RefreshIndicator(
+                    onRefresh: () async {
+                      return _getCovid19TodayAPI();
+                    },
+                    child: ListView.builder(
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            // color: Colors.lightBlueAccent,
+                            color: new Color(0x7134eb),
+                            elevation: 1,
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 10.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
-                          ),
-                        );
-                      });
+                            child: new Container(
+                              padding: new EdgeInsets.all(32.0),
+                              child: new Column(
+                                children: <Widget>[
+                                  new Text(
+                                    '${oCcy.format(data[keys[index]])}',
+                                    style: styleNumber,
+                                  ),
+                                  new Text(
+                                    '${keys[index]}',
+                                    style: styleDesc,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  );
                 } else {
                   return Center(
                     child: CircularProgressIndicator(),
