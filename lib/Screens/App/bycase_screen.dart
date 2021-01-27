@@ -33,6 +33,12 @@ class _StatByCaseState extends State<StatByCase> {
     fontSize: 14,
   );
 
+  Future<Null> _updateData() async {
+    setState(() {
+      dataList = [];
+    });
+  }
+
   Future<String> _getCovid19API() async {
     var response = await Http.get(
       "https://covid19.th-stat.com/api/open/cases",
@@ -51,7 +57,8 @@ class _StatByCaseState extends State<StatByCase> {
         break;
       }
     }
-    return "OK";
+
+    return "successed";
   }
 
   @override
@@ -66,12 +73,12 @@ class _StatByCaseState extends State<StatByCase> {
         // automaticallyImplyLeading: false
       ),
       body: Background(
-        child: new FutureBuilder(
-            future: _getCovid19API(),
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if (snapshot.hasData) {
-                return new RefreshIndicator(
-                    child: ListView.builder(
+        child: new RefreshIndicator(
+            child: new FutureBuilder(
+                future: _getCovid19API(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
                       padding: const EdgeInsets.all(10.0),
                       itemCount: dataList.length,
                       itemBuilder: (context, index) {
@@ -97,15 +104,15 @@ class _StatByCaseState extends State<StatByCase> {
                           ),
                         );
                       },
-                    ),
-                    onRefresh: () {
-                      return _getCovid19API();
-                    });
-              } else {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
+                    );
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                }),
+            onRefresh: () {
+              return _updateData();
             }),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.

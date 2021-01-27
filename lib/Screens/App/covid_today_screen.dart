@@ -44,6 +44,12 @@ class _StatTodayState extends State<StatToday> {
     'newHospitalized',
   ];
 
+  Future<Null> _updateData() async {
+    setState(() {
+      data = {};
+    });
+  }
+
   Future<String> _getCovid19TodayAPI() async {
     var response = await Http.get(
       "https://covid19.th-stat.com/api/open/today",
@@ -60,7 +66,7 @@ class _StatTodayState extends State<StatToday> {
     data['newHospitalized'] = jsonData['NewHospitalized'];
     data['newDeaths'] = jsonData['NewDeaths'];
 
-    return "OK";
+    return "successed";
   }
 
   @override
@@ -81,7 +87,7 @@ class _StatTodayState extends State<StatToday> {
                 if (snapshot.hasData) {
                   return new RefreshIndicator(
                     onRefresh: () async {
-                      return _getCovid19TodayAPI();
+                      return _updateData();
                     },
                     child: ListView.builder(
                         itemCount: data.length,
